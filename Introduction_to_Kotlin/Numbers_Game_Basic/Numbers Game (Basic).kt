@@ -10,13 +10,19 @@ fun main() {
         // // Ask the user to guess the secret number
         val userGuess = readLine()!!.toInt()
 
-        // If the user guesses correctly, display a message to tell them they have guessed correctly
-        if (userGuess == num) {
-            println("You got it!")
-        }
-        // If the user does not guess correctly, display a message to tell them they have guessed incorrectly and display the answer
-        else {
-            println("Wrong guess. The answer was $num.")
+        // Make sure that the user has entered a number between 0 and 10.
+        if (userGuess >= 0 && userGuess <= 10) {
+
+            // If the user guesses correctly, display a message to tell them they have guessed correctly
+            if (userGuess == num) {
+                println("You got it!")
+            }
+            // If the user does not guess correctly, display a message to tell them they have guessed incorrectly and display the answer
+            else {
+                println("Wrong guess. The answer was $num.")
+            }
+        } else {
+            println("The number must be between 0 and 10")
         }
     } catch (e: Exception) {
         println("Please enter numbers only.")
